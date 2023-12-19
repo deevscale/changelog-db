@@ -1,0 +1,3 @@
+#!/bin/bash
+source ../secrets/.env
+docker build -t deevscale/principal-db . --build-arg POSTGRES_PASSWORD

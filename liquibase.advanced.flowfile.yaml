@@ -21,7 +21,7 @@
 ########
 #### POTENTIAL use of environment variables:
 ######  DATETIME STAMP
-######## In this file, you could replace ${FLOWVARS.THISDATE} with an env var, such as ${LIQUIBASE_THISDATE} set via .bash_profile
+######## In this file, you could replace ${FLOWVARS.THISDATE} with an .env var, such as ${LIQUIBASE_THISDATE} set via .bash_profile
 ######## for example 'export LIQUIBASE_THISDATE=$( date +'%Y-%m-%dT%H-%M-%S' )'
 
 
@@ -86,10 +86,10 @@ stages:
 
 
       #
-      # And then save a version in detail, if env var LIQUIBASE_FILE_OUTPUT == 1
+      # And then save a version in detail, if .env var LIQUIBASE_FILE_OUTPUT == 1
       #
       - type: shell
-        command: bash -c "echo 'LIQUIBASE_ env vars ' && env | grep 'LIQUIBASE_' "
+        command: bash -c "echo 'LIQUIBASE_ .env vars ' && .env | grep 'LIQUIBASE_' "
 
       - type: liquibase
         ## if this var LIQUIBASE_CURRENT_TARGET is "dev", then the updatesql will run
@@ -100,7 +100,7 @@ stages:
       - type: shell
         ## if this var LIQUIBASE_CURRENT_TARGET is not "dev", then the message will be displayed
         if: "${LIQUIBASE_CURRENT_TARGET} != dev"
-        command: echo "No output files created. Set env var LIQUIBASE_CURRENT_TARGET to dev to trigger file creation."
+        command: echo "No output files created. Set .env var LIQUIBASE_CURRENT_TARGET to dev to trigger file creation."
 
 
 
