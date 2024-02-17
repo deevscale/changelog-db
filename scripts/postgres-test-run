@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo docker run -p 9992:5432 -e POSTGRES_USER=test_admin_user -e POSTGRES_PASSWORD=test_password -e POSTGRES_DB=test-database -e PGDATA=/var/lib/postgresql/data/testpgdata -v /var/lib/postgresql/docker/main:/var/lib/postgresql/data deevscale/principal-db
