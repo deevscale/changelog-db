@@ -1,7 +1,7 @@
 --liquibase formatted sql
 
 --changeset dom:1 context:account labels:account_profile,constraints
---precondition-sql-check expectedResult:t select exists (select from pg_tables where schemaname = 'public' and tablename ='account_profile')
+--precondition-sql-check expectedResult:t select exists (select from pg_tables where schemaname = 'principal' and tablename ='account_profile')
 --comment: account_profile foreign keys
 alter table account_profile
     add constraint fk_account_profile_account foreign key (account_id) references account(id),
