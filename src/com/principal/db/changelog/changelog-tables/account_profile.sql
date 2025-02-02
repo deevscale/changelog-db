@@ -1,7 +1,7 @@
 --liquibase formatted sql
 
 --changeset dom:1 context:account labels:account_profile,tables
---comment: account_profile table
+--comment: principal.account_profile table
 create table account_profile (
     id uuid not null,
     account_id uuid not null,
@@ -10,5 +10,5 @@ create table account_profile (
     deleted boolean not null default(false),
     primary key (id)
 );
---rollback drop table account_profile;
+--rollback drop table principal.account_profile;
 

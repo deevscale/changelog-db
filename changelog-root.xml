@@ -10,4 +10,6 @@
         http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
     <includeAll path="src/com/principal/db/changelog/changelog-tables/"/>
     <includeAll path="src/com/principal/db/changelog/changelog-constraints/"/>
+    <includeAll path="src/com/storage/db/changelog/changelog-tables/"/>
+    <includeAll path="src/com/storage/db/changelog/changelog-constraints/"/>
 </databaseChangeLog>

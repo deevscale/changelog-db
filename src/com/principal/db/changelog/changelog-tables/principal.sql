@@ -2,10 +2,10 @@
 
 --changeset dom:1 context:principal labels:principal,tables
 --comment: principal table
-create table principal (
+create table principal.principal (
     id uuid not null,
     name varchar not null,
     primary key (id)
 );
---rollback drop table principal;
+--rollback drop table principal.principal;
 
